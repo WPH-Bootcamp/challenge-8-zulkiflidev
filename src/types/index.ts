@@ -37,6 +37,21 @@ export type ButtonVariant = 'primary' | 'secondary' | 'outline';
 // Section Data Types
 // ==========================================
 
+export interface OurProcess {
+  id: number;
+  title: string;
+  description: string;
+}
+
+
+export interface SmartITSolutions {
+  id: number;
+  title: string;
+  description: string;
+  icon: string;
+}
+
+
 /**
  * TODO: Define interfaces untuk data yang digunakan di sections
  *
@@ -94,11 +109,12 @@ export type ButtonVariant = 'primary' | 'secondary' | 'outline';
 /**
  * Navigation menu item
  */
-// export interface NavItem {
-//   label: string;
-//   href: string;
-//   external?: boolean;
-// }
+
+export interface NavItem {
+  label: string;
+  href: string;
+  external?: boolean; //jika true, maka ini adalah link keluar (external)  
+}
 
 // ==========================================
 // Form Types (if needed)

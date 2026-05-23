@@ -5,11 +5,26 @@
  * Docs: https://tailwindcss.com/docs/installation/using-vite
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Quicksand:wght@300..700&display=swap');
 @import "tailwindcss";
+
+/* Konfigurasi manual class dark mode untuk Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
 
 /* Tell Tailwind where to scan for classes */
 @source "./**/*.{js,jsx,ts,tsx}";
 @source "../index.html";
+
+@theme {
+  --color-primary-200: #FF623E;
+  --color-neutral-900: #0A0D12;
+  --color-neutral-800: #252B37;
+  --color-neutral-400: #A4A7AE;
+  --color-neutral-25: #fdfdfd;
+  --color-base-white: #ffffff;
+  --font-sans: "Quicksand", sans-serif;
+  --font-outfit: "Outfit", sans-serif;
+}
 
 /**
  * Custom Global Styles
@@ -21,6 +36,11 @@
 /* Smooth scrolling for anchor links */
 html {
   scroll-behavior: smooth;
+}
+
+/* Global body style agar seluruh background berubah otomatis */
+body {
+  @apply bg-white text-gray-900 dark:bg-black dark:text-gray-100 transition-colors duration-300;
 }
 
 /* Optional: Custom scrollbar styles */
