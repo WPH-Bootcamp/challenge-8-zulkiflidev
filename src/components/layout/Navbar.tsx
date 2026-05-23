@@ -1,6 +1,8 @@
 import { navItems } from "../../data/navigation";
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Button from "../ui/Button"
+import logo from "../../assets/Logo.svg"
+import { Moon, Sun, Menu, X } from "lucide-react"
 
 function Navbar() {
 
@@ -8,51 +10,51 @@ function Navbar() {
   //defaultnya ---> false = mobile menu tertutup, jika diklik baru terbuka
   const [isOpen, setIsOpen] = useState(false);
 
+  // State "isDarkMode" mengambil data dari Local Storage
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+    // Jika disimpan 'dark' atau belum pernah disave (default ke dark)
+    return savedTheme === 'dark' || savedTheme === null;
+  });
+
+  // Terapkan class 'dark' & simpan pilihan ke Local Storage
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [isDarkMode]);
+
+  // Mengunci scroll saat burger menu terbuka pakai metode useEffect
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   return (
-    <div className="py-2">
-      <nav className="shadow-md w-full">
+    <div className="sticky top-0 z-50 bg-white dark:bg-black transition-colors duration-300 py-2">
+      <nav className="w-full">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center md:justify-around h-16">
+          <div className="flex justify-between items-center h-16">
                         
             <div className="flex items-center">                                                 
                 
                 {/* Logo Grafis */}
                 <div className="flex items-center justify-center">
-                  <svg
-                    viewBox="0 0 100 100"
-                    className="w-12 h-12 text-[#FF623E]"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <defs>
-                      <mask id="gap-mask">
-                        <rect width="100" height="100" fill="white" />
-                        
-                        <polygon
-                          points="44,50 84,36 84,76 44,90"
-                          fill="black"
-                          stroke="black"
-                          stroke-width="6"
-                          stroke-linejoin="miter"
-                        />
-                      </mask>
-                    </defs>
-
-                    <polygon
-                      points="22,28 62,14 62,54 22,68"
-                      fill="currentColor"
-                      mask="url(#gap-mask)"
-                    />
-
-                    <polygon
-                      points="44,50 84,36 84,76 44,90"
-                      fill="currentColor"
-                    />
-                  </svg>
+                  <img src={logo} alt="Company Logo" className="w-12 h-12" />
                 </div>                
  
                 {/* Logo Text */}
-                <div className="text-base-white"><span className="font-outfit text-2xl font-bold">Your Logo</span></div>
+                <div className="text-black dark:text-white"><span className="font-outfit text-2xl font-bold">Your Logo</span></div>
             </div>
 
             {/* Daftar Menu, untuk desktop&mobile */}
@@ -68,7 +70,7 @@ function Navbar() {
                 {navItems.map((item, index) => (
                     <a key={index}
                        href={item.href}
-                       className="text-neutral-25 hover:text-blue-600"
+                       className="text-gray-700 dark:text-neutral-25 hover:text-blue-600 transition-colors"
                        target={item.external ? "_blank" : undefined}
                     >
                       {item.label}
@@ -77,46 +79,57 @@ function Navbar() {
             </div>
 
             {/* Tombol "Let's Talk di desktop" */}
-            <div>
+            <div className="hidden md:flex space-x-8 md:justify-center md:items-center">
               <div className="hidden md:flex space-x-8">
                   <Button>Let's Talk</Button>
               </div>
-              
+
+              <div>
+                {/* toggle dark/theme button */}
+                <button 
+                  onClick={() => setIsDarkMode(!isDarkMode)}
+                  className="p-2 text-gray-700 dark:text-neutral-25 hover:text-blue-600 transition-colors"
+                >
+                  {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                </button>
+              </div>            
             </div>
 
 
-            {/* Tombol burger-menu di Mobile */} 
-            <div className="md:hidden flex items-center">
+            {/* Theme Toggle & Tombol burger-menu di Mobile */} 
+            <div className="md:hidden flex items-center space-x-2">
+                {/* toggle dark/theme button (mobile) */}
+                <button 
+                  onClick={() => setIsDarkMode(!isDarkMode)}
+                  className="p-2 text-gray-700 dark:text-neutral-25 hover:text-blue-600 transition-colors"
+                >
+                  {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                </button>
+
                 <button
                   onClick={() => setIsOpen(!isOpen)}
-                  className="text-gray-600 hover:text-blue-600"
+                  className="p-2 text-gray-700 dark:text-neutral-25 hover:text-blue-600 transition-colors"
                 >
-                  {isOpen ? (
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  ): (
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                  )}
+                  {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                 </button>
             </div>
           </div>
         </div>
 
         {isOpen && (
-          <div className="md:hidden"> 
-              <ul className="px-3  py-2 space-y-4 text-left ">
-                {navItems.map((item, index) => (
-                  <li key={index}>
-                    <a href={item.href}>{item.label}</a>
-                  </li> 
-                ))}
-                <li>
-                  <Button>Let's Talk</Button>
-                </li>
-              </ul>  
+          <div className="md:hidden bg-white dark:bg-black text-gray-700 dark:text-neutral-25 border-t border-gray-200 dark:border-neutral-800 mt-2 h-[calc(100vh-88px)] overflow-y-auto pb-6 transition-colors duration-300"> 
+              <div>
+                <ul className="px-3 py-4 space-y-4 text-left">
+                  {navItems.map((item, index) => (
+                    <li key={index}>
+                      <a href={item.href} className="block hover:text-blue-600">{item.label}</a>
+                    </li> 
+                  ))}
+                  <li>
+                    <Button>Let's Talk</Button>
+                  </li>
+                </ul>
+              </div>  
           </div>
         )}
       </nav>

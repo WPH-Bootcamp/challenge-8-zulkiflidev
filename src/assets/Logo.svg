@@ -1,0 +1,10 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <mask id="gap-mask">
+      <rect width="100" height="100" fill="white" />
+      <polygon points="44,50 84,36 84,76 44,90" fill="black" stroke="black" stroke-width="6" stroke-linejoin="miter" />
+    </mask>
+  </defs>
+  <polygon points="22,28 62,14 62,54 22,68" fill="#FF623E" mask="url(#gap-mask)" />
+  <polygon points="44,50 84,36 84,76 44,90" fill="#FF623E" />
+</svg>

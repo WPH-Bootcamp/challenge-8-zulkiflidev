@@ -37,6 +37,21 @@ export type ButtonVariant = 'primary' | 'secondary' | 'outline';
 // Section Data Types
 // ==========================================
 
+export interface OurProcess {
+  id: number;
+  title: string;
+  description: string;
+}
+
+
+export interface SmartITSolutions {
+  id: number;
+  title: string;
+  description: string;
+  icon: string;
+}
+
+
 /**
  * TODO: Define interfaces untuk data yang digunakan di sections
  *

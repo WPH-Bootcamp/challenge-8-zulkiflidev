@@ -10,15 +10,19 @@
  */
 
 import Navbar from "./components/layout/Navbar";
+import EndtoEndSection from "./components/sections/EndtoEndSection";
 import HeroSection from "./components/sections/HeroSection";
+import OurProcessSection from "./components/sections/OurProcessSection";
+import SmartItSolutions from "./components/sections/SmartItSolutions";
 
 function App() {
   return (
-    <div className="bg-black text-white min-h-screen">
-
+      <div className="min-h-screen md:px-16 transition-colors duration-300">
       <Navbar />
       <HeroSection />
-
+      <EndtoEndSection />
+      <OurProcessSection />
+      <SmartItSolutions />
 
     </div>    
 
