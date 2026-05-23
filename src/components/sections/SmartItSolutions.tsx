@@ -1,4 +1,4 @@
-import React from 'react'
+//import React from 'react'
 import { smartITSolutions } from '../../data/smartItSolutions'
 
 // Fungsi dinamis untuk resolve path gambar di Vite
