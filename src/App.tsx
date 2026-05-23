@@ -9,8 +9,20 @@
  * Current: Placeholder untuk testing Tailwind setup
  */
 
+import Navbar from "./components/layout/Navbar";
+import HeroSection from "./components/sections/HeroSection";
+
 function App() {
   return (
+    <div className="bg-black text-white min-h-screen">
+
+      <Navbar />
+      <HeroSection />
+
+
+    </div>    
+
+    /*{
     <div className="min-h-screen bg-gray-50 flex items-center justify-center">
       <div className="text-center">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
@@ -26,6 +38,7 @@ function App() {
         </div>
       </div>
     </div>
+    }*/
   );
 }
 

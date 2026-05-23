@@ -94,11 +94,12 @@ export type ButtonVariant = 'primary' | 'secondary' | 'outline';
 /**
  * Navigation menu item
  */
-// export interface NavItem {
-//   label: string;
-//   href: string;
-//   external?: boolean;
-// }
+
+export interface NavItem {
+  label: string;
+  href: string;
+  external?: boolean; //jika true, maka ini adalah link keluar (external)  
+}
 
 // ==========================================
 // Form Types (if needed)

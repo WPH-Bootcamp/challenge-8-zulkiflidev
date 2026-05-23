@@ -14,7 +14,7 @@
 import React from 'react';
 
 // Type definition untuk button variants
-type ButtonVariant = 'primary' | 'secondary' | 'outline';
+type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'original';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
 // Props interface dengan TypeScript
@@ -49,19 +49,21 @@ const Button: React.FC<ButtonProps> = ({
   type = 'button',
 }) => {
   // Base styles yang selalu applied
-  const baseStyles = 'font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2';
+  const baseStyles = 'font-medium rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2';
 
   // Variant styles - SESUAIKAN dengan design Figma!
   const variantStyles = {
-    primary: 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500',
+    primary: 'bg-primary-200 text-white shadow-[inset_0px_4px_4px_rgba(255,255,255,0.25)] hover:bg-primary-200/90 focus:ring-primary-200',
     secondary: 'bg-gray-600 text-white hover:bg-gray-700 focus:ring-gray-500',
     outline: 'border-2 border-blue-600 text-blue-600 hover:bg-blue-50 focus:ring-blue-500',
+    ghost: 'bg-transparent text-blue-600 hover:bg-blue-50 focus:ring-blue-500',
+    original: 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500',
   };
 
   // Size styles
   const sizeStyles = {
-    sm: 'px-4 py-2 text-sm',
-    md: 'px-6 py-3 text-base',
+    sm: 'w-full px-4 py-2 text-sm',
+    md: 'w-full md:w-60 px-6 py-3 text-base',
     lg: 'px-8 py-4 text-lg',
   };
 
