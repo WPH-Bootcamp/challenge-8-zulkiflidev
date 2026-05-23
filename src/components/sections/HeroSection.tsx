@@ -3,7 +3,7 @@ import companyLogo from '../../assets/CompanyLogo.svg'
 import Button from '../ui/Button'
 import { motion } from 'framer-motion'
 import imageHeroLight from '../../assets/ImageHero-light2.png'
-import imageHeroDark from '../../assets/ImageHero-dark.png'
+import imageHeroDark from '../../assets/ImageHero-dark2.png'
 
 function HeroSection() {
   return (
