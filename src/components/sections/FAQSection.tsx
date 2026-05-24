@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import { faq } from "../../data/faq";
 import faqMeetingImage from "../../assets/FAQ/faqMeeting.png"
 import Button from "../ui/Button"
