@@ -41,7 +41,7 @@ function Navbar() {
   }, [isOpen]);
 
   return (
-    <div className="sticky top-0 z-50 bg-white dark:bg-black transition-colors duration-300 py-2">
+    <div className="sticky top-0 z-50 bg-white dark:bg-black transition-colors duration-300 py-2 opacity-90">
       <nav className="w-full">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
