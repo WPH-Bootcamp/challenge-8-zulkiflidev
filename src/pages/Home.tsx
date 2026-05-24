@@ -2,7 +2,7 @@ import Footer from "../components/layout/Footer";
 import Navbar from "../components/layout/Navbar";
 import BuildForYourIndustry from "../components/sections/BuildForYourIndustry";
 import EndtoEndSection from "../components/sections/EndtoEndSection";
-import FAQSection from "../components/sections/faqSection";
+import FAQSection from "../components/sections/FAQSection";
 import FormSection from "../components/sections/FormSection";
 import FromVisionToLaunch from "../components/sections/FromVisionToLaunch";
 import HeroSection from "../components/sections/HeroSection";
