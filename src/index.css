@@ -16,9 +16,12 @@
 @source "../index.html";
 
 @theme {
+  --color-primary-300: #CC4E32;
   --color-primary-200: #FF623E;
+  --color-neutral-950: #0A0D12;
   --color-neutral-900: #0A0D12;
   --color-neutral-800: #252B37;
+  --color-neutral-600: #535862;
   --color-neutral-400: #A4A7AE;
   --color-neutral-25: #fdfdfd;
   --color-base-white: #ffffff;

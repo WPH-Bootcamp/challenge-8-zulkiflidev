@@ -1,9 +1,9 @@
-import React from 'react'
+//import React from 'react'
 import companyLogo from '../../assets/CompanyLogo.svg'
 import Button from '../ui/Button'
 import { motion } from 'framer-motion'
 import imageHeroLight from '../../assets/ImageHero-light2.png'
-import imageHeroDark from '../../assets/ImageHero-dark.png'
+import imageHeroDark from '../../assets/ImageHero-dark2.png'
 
 function HeroSection() {
   return (
@@ -46,8 +46,8 @@ function HeroSection() {
                     animate={{ x: ["0%", "-50%"] }}
                     transition={{ ease: "linear", duration: 50, repeat: Infinity }}
                 >
-                    <img src={companyLogo} alt="Company Logo" className="min-w-[1000px] sm:min-w-[1000px] md:min-w-[1200px] lg:min-w-[1400px] w-full max-w-none object-contain grayscale dark:invert transition-all duration-300 pr-8" />            
-                    <img src={companyLogo} alt="Company Logo" className="min-w-[1000px] sm:min-w-[1000px] md:min-w-[1200px] lg:min-w-[1400px] w-full max-w-none object-contain grayscale dark:invert transition-all duration-300 pr-8" />            
+                    <img src={companyLogo} alt="Company Logo" className="min-w-[1000px] grayscale sm:min-w-[1000px] md:min-w-[1200px] lg:min-w-[1400px] w-full max-w-none object-contain dark:invert transition-all duration-300 pr-8" />            
+                    <img src={companyLogo} alt="Company Logo" className="min-w-[1000px] grayscale sm:min-w-[1000px] md:min-w-[1200px] lg:min-w-[1400px] w-full max-w-none object-contain  dark:invert transition-all duration-300 pr-8" />            
                 </motion.div>
             </div>
         </div>
