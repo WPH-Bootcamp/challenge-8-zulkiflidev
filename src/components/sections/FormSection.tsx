@@ -1,18 +1,15 @@
 //import React from 'react'
 import Button from '../ui/Button'
+import SectionHeader from '../ui/SectionHeader'
 
 function FormSection() {
   return (
     <div className="px-4 py-8 md:px-12 md:py-16 overflow-x-hidden">
-       <div className="flex flex-col my-2 justify-center items-center text-center w-full">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-neutral-25">Ready to Start? Let’s Talk.</h2>
-          </div>
-          <div>
-            <h3 className="text-neutral-400 dark:text-neutral-400 font-medium transition-colors duration-300">
-                Tell us what you need, and we’ll get back to you soon.</h3>
-          </div>
-        </div>
+        <SectionHeader
+          title="Ready to Start? Let’s Talk."
+          subtitle="Tell us what you need, and we’ll get back to you soon."
+          className="my-2"
+        />
 
         <div className="flex flex-col my-8 justify-center items-center text-center w-full 
                         max-w-2xl mx-auto px-4">

@@ -1,8 +1,14 @@
+
 import { navItems } from "../../data/navigation";
 import { useState, useEffect } from "react"
+
 import Button from "../ui/Button"
 import logo from "../../assets/Logo.svg"
+
 import { Moon, Sun, Menu, X } from "lucide-react"
+
+
+
 
 function Navbar() {
 
@@ -11,22 +17,37 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   // State "isDarkMode" mengambil data dari Local Storage
+
+
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem('theme');
+  
     // Jika disimpan 'dark' atau belum pernah disave (default ke dark)
+  
     return savedTheme === 'dark' || savedTheme === null;
   });
+
+
 
   // Terapkan class 'dark' & simpan pilihan ke Local Storage
   useEffect(() => {
     if (isDarkMode) {
+
       document.documentElement.classList.add('dark');
+
       localStorage.setItem('theme', 'dark');
-    } else {
+
+    } 
+    else {
       document.documentElement.classList.remove('dark');
+
       localStorage.setItem('theme', 'light');
+
     }
   }, [isDarkMode]);
+
+
+
 
   // Mengunci scroll saat burger menu terbuka pakai metode useEffect
   useEffect(() => {
@@ -41,7 +62,7 @@ function Navbar() {
   }, [isOpen]);
 
   return (
-    <div className="sticky top-0 z-50 bg-white dark:bg-black transition-colors duration-300 py-2 opacity-90">
+    <div className="sticky top-0 z-50 backdrop-blur-md bg-white/70 dark:bg-black/70 transition-colors duration-300 py-2 border-b border-gray-200/50 dark:border-neutral-800/50">
       <nav className="w-full">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -54,7 +75,8 @@ function Navbar() {
                 </div>                
  
                 {/* Logo Text */}
-                <div className="text-black dark:text-white"><span className="font-outfit text-2xl font-bold">Your Logo</span></div>
+                <div className="text-black dark:text-white">
+                  <span className="font-outfit text-2xl font-bold">Your Logo</span></div>
             </div>
 
             {/* Daftar Menu, untuk desktop&mobile */}
@@ -88,11 +110,13 @@ function Navbar() {
                 {/* toggle dark/theme button */}
                 <button 
                   onClick={() => setIsDarkMode(!isDarkMode)}
-                  className="p-2 text-gray-700 dark:text-neutral-25 hover:text-blue-600 transition-colors"
+                  className="p-2 text-gray-700 
+                  dark:text-neutral-25 hover:text-blue-600 transition-colors"
                 >
                   {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
                 </button>
-              </div>            
+              </div>   
+                                     
             </div>
 
 
@@ -117,7 +141,13 @@ function Navbar() {
         </div>
 
         {isOpen && (
-          <div className="md:hidden bg-white dark:bg-black text-gray-700 dark:text-neutral-25 border-t border-gray-200 dark:border-neutral-800 mt-2 h-[calc(100vh-88px)] overflow-y-auto pb-6 transition-colors duration-300"> 
+          <div className="md:hidden bg-white 
+                          dark:bg-black text-gray-700 dark:text-neutral-25 
+                          border-t border-gray-200 
+                          dark:border-neutral-800 mt-2 h-[calc(100vh-88px)] 
+                          overflow-y-auto pb-6 transition-colors duration-300"> 
+
+
               <div>
                 <ul className="px-3 py-4 space-y-4 text-left">
                   {navItems.map((item, index) => (

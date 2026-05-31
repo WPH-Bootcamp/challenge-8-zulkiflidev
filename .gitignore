@@ -33,3 +33,7 @@ claude.json
 .cursor/
 .aider*
 .continue/
+
+#Tutorial
+TAILWIND_GLOSSARY.md
+TAILWIND_CLASSES_ONLY.md
