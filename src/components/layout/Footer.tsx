@@ -1,9 +1,6 @@
 import { navItems } from "../../data/navigation";
+import { socialLinks } from "../../data/socials";
 import logo from "../../assets/Logo.svg";
-import facebookIcon from "../../assets/facebook.svg";
-import twitterIcon from "../../assets/twitter.svg";
-import instagramIcon from "../../assets/instagram.svg";
-import linkedinIcon from "../../assets/linkedin.svg";
 
 function Footer() {
   return (
@@ -52,18 +49,11 @@ function Footer() {
 
           {/* Kanan Bawah: Social Media Icons */}
           <div className="flex items-center gap-4">
-            <a href="#" className="group p-3 rounded-full border border-gray-200 dark:border-neutral-800 hover:bg-gray-100 dark:hover:bg-neutral-900 transition-all">
-              <img src={facebookIcon} alt="Facebook" className="w-5 h-5 opacity-60 group-hover:opacity-100 transition-opacity dark:invert" />
-            </a>
-            <a href="#" className="group p-3 rounded-full border border-gray-200 dark:border-neutral-800 hover:bg-gray-100 dark:hover:bg-neutral-900 transition-all">
-              <img src={twitterIcon} alt="Twitter" className="w-5 h-5 opacity-60 group-hover:opacity-100 transition-opacity dark:invert" />
-            </a>
-            <a href="#" className="group p-3 rounded-full border border-gray-200 dark:border-neutral-800 hover:bg-gray-100 dark:hover:bg-neutral-900 transition-all">
-              <img src={instagramIcon} alt="Instagram" className="w-5 h-5 opacity-60 group-hover:opacity-100 transition-opacity dark:invert" />
-            </a>
-            <a href="#" className="group p-3 rounded-full border border-gray-200 dark:border-neutral-800 hover:bg-gray-100 dark:hover:bg-neutral-900 transition-all">
-              <img src={linkedinIcon} alt="LinkedIn" className="w-5 h-5 opacity-60 group-hover:opacity-100 transition-opacity dark:invert" />
-            </a>
+            {socialLinks.map((social) => (
+              <a key={social.name} href={social.href} className="group p-3 rounded-full border border-gray-200 dark:border-neutral-800 hover:bg-gray-100 dark:hover:bg-neutral-900 transition-all">
+                <img src={social.icon} alt={social.name} className="w-5 h-5 opacity-60 group-hover:opacity-100 transition-opacity dark:invert" />
+              </a>
+            ))}
           </div>
         </div>
 

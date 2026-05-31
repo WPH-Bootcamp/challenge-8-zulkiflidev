@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { buildForYourIndustry } from '../../data/buildForYourIndustry';
-
+import SectionHeader from '../ui/SectionHeader';
 
 // Fungsi dinamis untuk resolve path gambar di Vite
 function getImageUrl(imageName: string) {
@@ -13,15 +13,11 @@ function BuildForYourIndustry() {
 
   return (
     <div>
-        
-        <div className="flex flex-col my-2 justify-center items-center text-center w-full">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-neutral-25">Built for Your Industry</h2>
-          </div>
-          <div>
-            <h3 className="text-neutral-400 dark:text-neutral-400 font-medium transition-colors duration-300">We’ve helped companies across industries launch smarter, faster, and more securely.</h3>
-          </div>
-        </div>
+        <SectionHeader
+          title="Built for Your Industry"
+          subtitle="We’ve helped companies across industries launch smarter, faster, and more securely."
+          className="my-2"
+        />
 
         <div className="flex flex-col py-16 md:flex-row justify-center items-start w-full max-w-5xl mx-auto">
             <div className="px-4 md:w-1/3 flex flex-col gap-4">

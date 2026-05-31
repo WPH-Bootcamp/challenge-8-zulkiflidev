@@ -1,11 +1,9 @@
-import  { useState } from 'react'
 import { faq } from "../../data/faq";
 import faqMeetingImage from "../../assets/FAQ/faqMeeting.png"
 import Button from "../ui/Button"
+import Accordion from '../ui/Accordion';
 
 function FAQSection() {
-  // State untuk melacak indeks FAQ yang terbuka. Default: 0 (pertanyaan pertama)
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
     <div className="px-4 py-8 md:px-12 md:py-16 overflow-x-hidden">
@@ -20,25 +18,8 @@ function FAQSection() {
 
         <div className="flex flex-col md:flex-row mt-8 md:mt-16 justify-center md:items-start gap-8">
             <div className="w-full md:w-1/2">
-                {faq.map((item, index) => {
-                    const isOpen = openIndex === index;
-                    return (
-                        <div key={index} className="my-4 border-b border-gray-200 dark:border-neutral-800 pb-4 pr-8">
-                          <div 
-                              className="flex justify-between items-center cursor-pointer font-bold text-gray-900 dark:text-neutral-25"
-                              onClick={() => setOpenIndex(isOpen ? null : index)}
-                          >
-                              <span>{item.question}</span>
-                              <span className="text-2xl font-normal text-gray-500">{isOpen ? '-' : '+'}</span>
-                          </div>
-                          {isOpen && (
-                              <div className="mt-4 text-gray-600 dark:text-neutral-400">
-                                  {item.answer}
-                              </div>
-                          )}
-                        </div>
-                    );
-                })}
+                {/* Wow, ini sangat bersih! Cukup lemparkan datanya ke komponen Accordion */}
+                <Accordion items={faq} />
             </div>
             <div className="w-full md:w-1/3">
                 <div className="flex flex-col bg-primary-300 gap-4 p-6 rounded-2xl">

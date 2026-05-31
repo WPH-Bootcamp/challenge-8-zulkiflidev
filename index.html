@@ -2,27 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>company_profile</title>
-    
-    <style>
-      /* CSS Darurat: Mencegah flash putih sebelum file CSS Tailwind selesai dimuat */
-      html { background-color: #ffffff; }
-      html.dark { background-color: #000000; }
-    </style>
-
-    <script>
-      /* Script ini jalan duluan sebelum React render HTML untuk cegah flash putih */
-      const savedTheme = localStorage.getItem('theme');
-      
-      // Jika sebelumnya user save 'dark' atau belum ada data (default ke dark)
-      if (savedTheme === 'dark' || savedTheme === null) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    </script>
+    <title>Company Profile</title>
   </head>
   <body>
     <div id="root"></div>

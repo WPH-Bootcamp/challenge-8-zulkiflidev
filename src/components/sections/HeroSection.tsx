@@ -1,7 +1,6 @@
-//import React from 'react'
 import companyLogo from '../../assets/CompanyLogo.svg'
 import Button from '../ui/Button'
-import { motion } from 'framer-motion'
+import Marquee from '../ui/Marquee'
 import imageHeroLight from '../../assets/ImageHero-light2.png'
 import imageHeroDark from '../../assets/ImageHero-dark2.png'
 
@@ -40,16 +39,10 @@ function HeroSection() {
             <div className="text-gray-600 dark:text-gray-400 font-medium transition-colors duration-300">
                 <h3>Trusted by Global Innovators & Leading Brands</h3>
             </div>
-            <div className="w-full mt-2 md:mt-2 flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-                <motion.div 
-                    className="flex shrink-0"
-                    animate={{ x: ["0%", "-50%"] }}
-                    transition={{ ease: "linear", duration: 50, repeat: Infinity }}
-                >
-                    <img src={companyLogo} alt="Company Logo" className="min-w-[1000px] grayscale sm:min-w-[1000px] md:min-w-[1200px] lg:min-w-[1400px] w-full max-w-none object-contain dark:invert transition-all duration-300 pr-8" />            
-                    <img src={companyLogo} alt="Company Logo" className="min-w-[1000px] grayscale sm:min-w-[1000px] md:min-w-[1200px] lg:min-w-[1400px] w-full max-w-none object-contain  dark:invert transition-all duration-300 pr-8" />            
-                </motion.div>
-            </div>
+            {/* Cukup bungkus 1 elemen gambar ke dalam Marquee, sisanya diurus oleh komponen UI! */}
+            <Marquee speed={50} className="mt-2 md:mt-2">
+                <img src={companyLogo} alt="Company Logo" className="min-w-[1000px] grayscale sm:min-w-[1000px] md:min-w-[1200px] lg:min-w-[1400px] w-full max-w-none object-contain dark:invert transition-all duration-300 pr-8" />            
+            </Marquee>
         </div>
     </div>
   )

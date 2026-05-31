@@ -87,6 +87,15 @@ export interface BuildForYourIndustry {
   imageName: string;
 }
 
+/**
+ * End-to-End Solutions (Section)
+ */
+export interface EndToEndStat {
+  id: number;
+  title: string;
+  description: string;
+}
+
 
 /**
  * User Review (Section)
@@ -100,6 +109,16 @@ export interface UserReview {
   imageName: string;
 }
 
+
+/**
+ * Portfolio / Projects (Section)
+ */
+export interface PortfolioProject {
+  id: number;
+  title: string;
+  category: string;
+  imageName: string;
+}
 
 /**
  * User Review (Section)
@@ -154,6 +173,15 @@ export interface NavItem {
   label: string;
   href: string;
   external?: boolean; //jika true, maka ini adalah link keluar (external)  
+}
+
+/**
+ * Social media link item
+ */
+export interface SocialLink {
+  name: string;
+  icon: string;
+  href: string;
 }
 
 // ==========================================
