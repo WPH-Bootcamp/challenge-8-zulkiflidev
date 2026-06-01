@@ -6,3 +6,7 @@ export const userReview: UserReview[] = [
   { id: 3, score: 5, review: 'The collaboration was seamless, and the results surpassed our expectations. Their expertise transformed our ideas into a successful product.', authorName: 'Emily Chen', authorRole: 'Marketing Head at Tech Solutions', imageName: 'EmilyChen' },
 
 ];
+
+
+
+

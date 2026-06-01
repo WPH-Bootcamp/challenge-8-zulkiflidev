@@ -7,3 +7,11 @@ export const navItems: NavItem[] = [
   { label: 'Testimonials', href: '#testimonials' },
   { label: 'FAQ', href: '#faq' },
 ];
+
+
+
+
+
+
+
+

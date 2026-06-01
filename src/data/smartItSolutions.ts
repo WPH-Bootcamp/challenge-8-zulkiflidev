@@ -11,3 +11,11 @@ export const smartITSolutions: SmartITSolutions[] = [
   { id: 8, title: 'QA Solutions', description: 'Ensure performance with rigorous testing frameworks.', icon: 'QASolutions' },
   { id: 9, title: 'IT Consulting & Support', description: 'Make smarter tech decisions with expert guidance.', icon: 'ITConsultingSupport' },
 ];
+
+
+
+
+
+
+
+

@@ -1,12 +1,7 @@
 import { smartITSolutions } from '../../data/smartItSolutions'
 import Card from '../ui/Card';
 import SectionHeader from '../ui/SectionHeader';
-
-
-// Fungsi dinamis untuk resolve path gambar di Vite
-function getImageUrl(iconName: string) {
-  return new URL(`../../assets/SmartItSolutions/${iconName}.png`, import.meta.url).href;
-}
+import { getImageUrl } from '../../utils/helpers';
 
 function SmartItSolutions() {
   return (
@@ -17,25 +12,21 @@ function SmartItSolutions() {
           className="my-16"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 py-4 lg:grid-cols-3 gap-2 md:gap-8 mt-8 md:mt-12 max-w-6xl mx-auto">
-          {/* 4 item di dalam grid */}
-          
+        <div className="grid grid-cols-1 md:grid-cols-2 py-4 lg:grid-cols-3 gap-2 
+                        md:gap-8 mt-8 md:mt-12 max-w-6xl mx-auto">
           {smartITSolutions.map((item, index) => (
             <Card 
               key={index}
               variant="smart"
               title={item.title}
               description={item.description}
-              icon={getImageUrl(item.icon)}
+              icon={getImageUrl('SmartItSolutions', item.icon)}
             />
           ))}
-
         </div>
         <br/>
         <br/>
         <br/>
-
-
     </div>
   )
 }

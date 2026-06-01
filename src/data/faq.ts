@@ -7,10 +7,9 @@ export const faq: FAQ[] = [
   { id: 4, question: "How long does it take?", answer: "Depends on scope — but we always prioritize quality and deadlines."},
   { id: 5, question: "Can I start with a small project first?", answer: "Absolutely. We often begin with MVPs or pilot projects."},
 
-    
-
-
-
-
-
 ];
+
+
+
+
+
