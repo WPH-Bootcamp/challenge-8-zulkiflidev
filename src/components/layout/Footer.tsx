@@ -1,6 +1,9 @@
 import { navItems } from "../../data/navigation";
 import { socialLinks } from "../../data/socials";
+
 import logo from "../../assets/Logo.svg";
+
+
 
 function Footer() {
   return (
@@ -23,12 +26,16 @@ function Footer() {
             
             {/* Kanan Atas: Logo */}
             <div className="flex items-center gap-3">
+              
               <div className="flex items-center justify-center">
                 <img src={logo} alt="Company Logo" className="w-12 h-12" />
               </div>                
+              
               <div className="text-black dark:text-white">
                 <span className="font-outfit text-2xl font-bold">Your Logo</span>
               </div>
+
+
             </div>
           </div>
 
@@ -36,36 +43,43 @@ function Footer() {
           <div className="h-px w-full bg-gray-200 dark:bg-neutral-800"></div>
 
           {/* --- Bagian Bawah --- */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center 
+                          gap-8">
             
             {/* Kiri Bawah: Navigation Menu */}
             <div className="flex flex-wrap items-center gap-6 md:gap-8">
-              {navItems.map((item, index) => (
-                <a 
-                  key={index}
-                  href={item.href}
-                  className="text-gray-700 dark:text-neutral-400 hover:text-blue-600 
-                            dark:hover:text-white transition-colors font-medium"
-                  target={item.external ? "_blank" : undefined}
-                >
-                  {item.label}
-                </a>
-              ))}
+
+                {navItems.map((item, index) => (
+                  <a 
+                    key={index}
+                    href={item.href}
+                    className="text-gray-700 dark:text-neutral-400 hover:text-blue-600 
+                              dark:hover:text-white transition-colors font-medium"
+                    target={item.external ? "_blank" : undefined}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+            
             </div>
 
             {/* Kanan Bawah: Social Media Icons */}
             <div className="flex items-center gap-4">
+
               {socialLinks.map((social) => (
-                <a key={social.name} href={social.href} 
-                  className="group p-3 rounded-full border border-gray-200 dark:border-neutral-800 
-                            hover:bg-gray-100 dark:hover:bg-neutral-900 transition-all">
-                  
-                    <img src={social.icon} alt={social.name} className="w-5 h-5 opacity-60 
-                        group-hover:opacity-100 transition-opacity dark:invert" />
+
+                  <a key={social.name} href={social.href} 
+                    className="group p-3 rounded-full border border-gray-200 dark:border-neutral-800 
+                              hover:bg-gray-100 dark:hover:bg-neutral-900 transition-all">
+                    
+                      <img src={social.icon} alt={social.name} className="w-5 h-5 opacity-60 
+                          group-hover:opacity-100 transition-opacity dark:invert" />
                 
                 </a>
+              
               ))}
             </div>
+            
           </div>
 
         </div>

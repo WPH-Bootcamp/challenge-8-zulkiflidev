@@ -61,7 +61,11 @@ function Navbar() {
 
             <div className="hidden md:flex space-x-8 md:justify-center md:items-center">
               <div className="hidden md:flex space-x-8">
-                  <Button>Let's Talk</Button>
+                  <Button onClick={() => {
+                      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  }}>
+                      Let's Talk
+                  </Button>
               </div>
               <div>
                 <button 
@@ -105,7 +109,12 @@ function Navbar() {
                     </li> 
                   ))}
                   <li>
-                    <Button>Let's Talk</Button>
+                    <Button onClick={() => {
+                        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                        setIsOpen(false);
+                    }}>
+                        Let's Talk
+                    </Button>
                   </li>
                 </ul>
               </div>  

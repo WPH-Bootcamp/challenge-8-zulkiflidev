@@ -12,6 +12,7 @@ function UserReview() {
 
   return (
     <div className="md:px-12 md:py-16 overflow-x-hidden">
+
         <SectionHeader
           title="What Partners Say About Working With Us"
           subtitle="Trusted voices. Real experiences. Proven results."
@@ -38,12 +39,16 @@ function UserReview() {
                         key={index}
                         variant="review"
                         title={item.authorName}
+
                         subtitle={item.authorRole}
                         description={item.review}
                         icon={getImageUrl('UserReview', item.imageName)}
+                        
                         onClick={() => setActiveIndex(index)}
-                        className={`w-full md:w-1/2 ${orderClass} ${isActive ? 'scale-100 z-10 shadow-2xl' : 'scale-90 z-0'}`}
+                        className={`w-full md:w-1/2 ${orderClass} ${isActive ? 
+                                                                  'scale-100 z-10 shadow-2xl' : 'scale-90 z-0 hidden md:block'}`}
                     >
+
                     <img src={quote} alt="Quote" 
                          className="absolute -top-5 left-16 w-16 h-10 object-cover 
                          object-bottom shadow-lg" />
@@ -52,12 +57,20 @@ function UserReview() {
 
                     <div className={`absolute -top-8 left-0 right-0 -bottom-16 z-20 rounded-3xl 
                                      pointer-events-none transition-opacity duration-500 
+                        
                         ${isActive ? 'opacity-0' : 'opacity-100 group-hover:opacity-70'}
-                        ${orderClass === 'md:order-1' ? 'bg-gradient-to-r from-gray-200 to-transparent dark:from-black dark:to-transparent' : ''}
-                        ${orderClass === 'md:order-3' ? 'bg-gradient-to-l from-gray-200 to-transparent dark:from-black dark:to-transparent' : ''}
+                        
+                        ${orderClass === 'md:order-1' ? 
+                                         'bg-gradient-to-r from-gray-200 to-transparent dark:from-black dark:to-transparent' : ''}
+                        
+                        ${orderClass === 'md:order-3' ? 
+                                         'bg-gradient-to-l from-gray-200 to-transparent dark:from-black dark:to-transparent' : ''}
                     `} />
+                    
                 </Card>
             )})}
+
+            
         </div>
     </div>
   )
