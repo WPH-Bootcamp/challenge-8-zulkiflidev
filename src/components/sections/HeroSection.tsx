@@ -23,7 +23,11 @@ function HeroSection() {
                     We deliver tailored IT solutions to help you scale with speed and confidence.
                 </h3>
                 <div>
-                    <Button>Let's Talk</Button>
+                    <Button onClick={() => {
+                        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                    }}>
+                        Let's Talk
+                    </Button>
                 </div>
             </div>
 

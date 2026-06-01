@@ -14,22 +14,24 @@ function EndtoEndSection() {
           className="my-16"
         />
 
-        <div className="grid grid-cols-2 py-4 lg:grid-cols-4 gap-2 md:gap-8 mt-8 md:mt-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 py-4 lg:grid-cols-4 gap-2 md:gap-8 mt-8 md:mt-12 
+                      max-w-5xl mx-auto">
           
             {/* 4 item di dalam grid*/}
             {statsData.map((stat) => (
+              
               <Card 
                 key={stat.id}
                 variant="circle"
+
                 title={stat.title}
                 description={stat.description}
               />
+
             ))}
         </div>
 
-        <br/>
-        <br/>
-        <br/>
+         
     </div>
   )
 }
