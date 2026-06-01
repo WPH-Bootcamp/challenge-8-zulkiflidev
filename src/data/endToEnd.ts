@@ -7,3 +7,9 @@ export const statsData: EndToEndStat[] = [
   { id: 3, title: "10+", description: "Industry Awards Won" },
   { id: 4, title: "50+", description: "Client Satisfaction Rate" }
 ];
+
+
+
+
+
+

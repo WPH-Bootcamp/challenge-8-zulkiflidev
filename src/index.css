@@ -46,6 +46,16 @@ body {
   @apply bg-white text-gray-900 dark:bg-black dark:text-gray-100 transition-colors duration-300;
 }
 
+
+.review-overlay-left {
+   @apply bg-gradient-to-r from-black via-black/80 to-black/50 dark:from-black dark:via-black/90 dark:to-black/70;
+}
+
+.review-overlay-right {
+   @apply bg-gradient-to-l from-black via-black/80 to-black/50 dark:from-black dark:via-black/90 dark:to-black/70;
+}
+
+
 /* Optional: Custom scrollbar styles */
 /* Uncomment if you want custom scrollbar
 ::-webkit-scrollbar {

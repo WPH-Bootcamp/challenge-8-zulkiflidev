@@ -1,6 +1,9 @@
 import Card from '../ui/Card';
 import SectionHeader from '../ui/SectionHeader';
+
 import { statsData } from '../../data/endToEnd';
+
+
 
 function EndtoEndSection() {
   return (
@@ -12,15 +15,16 @@ function EndtoEndSection() {
         />
 
         <div className="grid grid-cols-2 py-4 lg:grid-cols-4 gap-2 md:gap-8 mt-8 md:mt-12 max-w-5xl mx-auto">
-          {/* 4 item di dalam grid sekarang jauh lebih bersih menggunakan array map & Card circle */}
-          {statsData.map((stat) => (
-            <Card 
-              key={stat.id}
-              variant="circle"
-              title={stat.title}
-              description={stat.description}
-            />
-          ))}
+          
+            {/* 4 item di dalam grid*/}
+            {statsData.map((stat) => (
+              <Card 
+                key={stat.id}
+                variant="circle"
+                title={stat.title}
+                description={stat.description}
+              />
+            ))}
         </div>
 
         <br/>

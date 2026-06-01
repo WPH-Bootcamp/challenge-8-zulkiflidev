@@ -6,3 +6,10 @@ export const portfolioProjects: PortfolioProject[] = [
   { id: 2, title: "Portfolio 2", category: "Landing Page", imageName: "Portfolio2" },
   { id: 3, title: "Portfolio 3", category: "Landing Page", imageName: "Portfolio3" },
 ];
+
+
+
+
+
+
+
